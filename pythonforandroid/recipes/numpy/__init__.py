@@ -11,6 +11,7 @@ class NumpyRecipe(CompiledComponentsPythonRecipe):
     depends = ['setuptools', 'cython']
 
     patches = [
+        join('patches', 'add_docstring_workaround.patch'),
         join('patches', 'add_libm_explicitly_to_build.patch'),
         join('patches', 'do_not_use_system_libs.patch'),
         join('patches', 'remove_unittest_call.patch'),

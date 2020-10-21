@@ -1,0 +1,14 @@
+diff --git a/numpy/core/overrides.py b/numpy/core/overrides.py
+index 55c7bd1ea..7f464c92a 100644
+--- a/numpy/core/overrides.py
++++ b/numpy/core/overrides.py
+@@ -154,6 +154,9 @@ def array_function_dispatch(dispatcher, module=None, verify=True,
+     Function suitable for decorating the implementation of a NumPy function.
+     """
+ 
++    if dispatcher.__doc__ is None:
++        dispatcher.__doc__ = ""
++
+     if not ARRAY_FUNCTION_ENABLED:
+         def decorator(implementation):
+             if docs_from_dispatcher:
